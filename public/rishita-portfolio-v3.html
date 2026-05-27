@@ -721,37 +721,37 @@ function heroUnfold(y){
   // BALL — idle wobble until scroll begins, then bulges & spins as it bursts open.
   if(p>0.02){ ball.classList.remove('idle'); } else { ball.classList.add('idle'); }
   let bOp=1,bS=1,bR=0;
-  if(p<0.10){
+  if(p<0.04){
     bOp=1; bS=1; bR=0;
-  } else if(p<0.32){
-    const t=seg(p,0.10,0.32);
+  } else if(p<0.14){
+    const t=seg(p,0.04,0.14);
     bS=lerp(1,1.22,t); bR=lerp(0,-18,t); bOp=lerp(1,0.55,t);
-  } else if(p<0.45){
-    const t=seg(p,0.32,0.45);
+  } else if(p<0.22){
+    const t=seg(p,0.14,0.22);
     bS=lerp(1.22,1.7,t); bR=lerp(-18,-38,t); bOp=lerp(0.55,0,t);
   } else {
     bOp=0; bS=1.7; bR=-38;
   }
   ball.style.opacity=String(bOp);
-  ball.style.transform=`translateX(-50%) scale(${bS}) rotate(${bR}deg)`;
+  ball.style.transform=`scale(${bS}) rotate(${bR}deg)`;
 
   // PAPER — opens out of the ball: width expands first, then height, then settles.
   // Fades back out before hero releases so it never bleeds into the next section.
   let pOp=0,pSX=0.05,pSY=0.05,pRot=22,pSk=18;
-  if(p<0.20){
+  if(p<0.08){
     pOp=0; pSX=0.05; pSY=0.05; pRot=22; pSk=18;
-  } else if(p<0.55){
-    const t=seg(p,0.20,0.55);
+  } else if(p<0.28){
+    const t=seg(p,0.08,0.28);
     pOp=lerp(0,1,t);
     pSX=lerp(0.12,1.0,t);
     pSY=lerp(0.20,1.0,t);
     pRot=lerp(22,-1.5,t);
     pSk=lerp(18,0,t);
-  } else if(p<0.75){
+  } else if(p<0.80){
     pOp=1; pSX=1; pSY=1; pRot=-1.5; pSk=0;
   } else {
     // shrink + fade out so the unfolded paper never persists into About
-    const t=seg(p,0.75,0.95);
+    const t=seg(p,0.80,0.95);
     pOp=lerp(1,0,t);
     pSX=lerp(1,0.85,t); pSY=lerp(1,0.85,t);
     pRot=lerp(-1.5,8,t); pSk=0;
