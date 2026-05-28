@@ -284,6 +284,75 @@ nav.scrolled{backdrop-filter:blur(14px);background:rgba(13,13,13,.75);}
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
 
+
+/* ===================== RESPONSIVE ===================== */
+.will-anim{will-change:transform,opacity;}
+
+/* Tablet */
+@media(max-width:768px){
+  section, #about, #experience, #projects, #skills, #polaroids, #contact{padding-left:5vw;padding-right:5vw;}
+  #about, #experience, #projects, #skills, #polaroids, #contact{padding-top:12vw;padding-bottom:12vw;}
+  #paper-ball{width:140px;height:140px;}
+  .nav-links{gap:18px;}
+  .nav-links a{font-size:11px;}
+  .polaroid-row{flex-wrap:wrap;}
+  .dice-scene{width:100px;height:100px;}
+  .face-front, .face-back, .face-right, .face-left, .face-top, .face-bottom{transform-style:preserve-3d;}
+  .proj-cards{grid-template-columns:1fr 1fr;}
+  #about{grid-template-columns:1fr;}
+  .record{width:clamp(200px,40vw,260px);height:clamp(200px,40vw,260px);}
+}
+
+/* Mobile */
+@media(max-width:480px){
+  #about, #experience, #projects, #skills, #polaroids, #contact{padding:18vw 5vw;}
+  #about{clip-path:polygon(0 3vw,100% 0,100% 100%,0 100%);}
+  #experience{clip-path:polygon(0 0,100% 3vw,100% 100%,0 calc(100% - 3vw));}
+  #projects{clip-path:polygon(0 3vw,100% 0,100% 100%,0 100%);}
+  #skills{clip-path:polygon(0 0,100% 3vw,100% 100%,0 calc(100% - 3vw));}
+  #polaroids{clip-path:polygon(0 3vw,100% 0,100% 100%,0 100%);}
+  #contact{clip-path:polygon(0 0,100% 3vw,100% 100%,0 100%);}
+
+  #paper-wrap{width:92vw;}
+  #paper-ball{width:120px;height:120px;}
+  #paper-unfolded{padding:20px;}
+  .hero-badge{top:70px;right:4vw;font-size:10px;padding:7px 12px;}
+
+  .record{width:clamp(160px,55vw,220px);height:clamp(160px,55vw,220px);}
+  .sticky-quote{max-width:100%;font-size:13px;}
+
+  .exp-row{grid-template-columns:2.2rem 1fr;gap:10px;}
+  .exp-role{font-size:clamp(15px,4vw,20px);}
+  .exp-tags{gap:6px;}
+
+  .dice-scene{display:none;}
+  .proj-layout{grid-template-columns:1fr;}
+  .proj-cards{grid-template-columns:1fr;}
+
+  .skills-layout{grid-template-columns:1fr;}
+  .skills-cloud{min-height:240px;}
+  .skill-strip{font-size:10px;padding:6px 12px;}
+  .hobby-cut{padding:14px 12px;}
+  .ticker-inner span{font-size:11px;padding:0 18px;}
+
+  .polaroid-row{flex-direction:column;align-items:center;}
+  .polaroid{width:75vw;max-width:260px;}
+
+  .contact-grid{grid-template-columns:1fr;}
+  .neon-name{font-size:clamp(36px,10vw,56px);}
+  .contact-bg-txt{font-size:28vw;}
+
+  nav .nav-links{display:none;}
+}
+
+/* Touch devices — hide custom cursor */
+@media(hover:none){
+  #cd, #cr{display:none!important;}
+  body{cursor:auto;}
+  a, button, .arcade-btn, .nav-logo, .nav-links a{cursor:auto;}
+}
+
+.record, .pin-card, .polaroid{will-change:transform,opacity;}
 </style>
 </head>
 <body>
