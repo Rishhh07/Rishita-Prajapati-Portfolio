@@ -685,31 +685,24 @@ skillsData.forEach((s,i)=>{
 });
 
 // ── MAIN SCROLL HANDLER ─────────────────────────────
-window.addEventListener('scroll',()=>{
+let _scrollScheduled=false;
+function _processScroll(){
+  _scrollScheduled=false;
   const y=window.scrollY;
   const dh=document.documentElement.scrollHeight-window.innerHeight;
   scrollVel=y-lastY;lastY=y;
-
-  // progress bar
   prog.style.width=(y/dh*100)+'%';
-
-  // nav
   navbar.classList.toggle('scrolled',y>60);
-
-  // HERO — paper unfold
   heroUnfold(y);
-
-  // VINYL — rotation speed from velocity
   vinylSpin();
-
-  // EXPERIENCE — paint roller
   paintRoller();
-
-  // PROJECTS — dice rotation
   diceRotate(y);
-
-  // POLAROIDS — drop in
   polDrop();
+}
+window.addEventListener('scroll',()=>{
+  if(_scrollScheduled)return;
+  _scrollScheduled=true;
+  requestAnimationFrame(_processScroll);
 });
 
 // ── HERO PAPER ───────────────────────────────────────
