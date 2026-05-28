@@ -857,7 +857,8 @@ function heroUnfold(y){
 let vinylAngle=0;
 const vinylWrap=document.getElementById('vinyl');
 function vinylSpin(){
-  vinylAngle+=Math.abs(scrollVel)*0.4;
+  const vMul = (window.matchMedia && window.matchMedia('(max-width:480px)').matches) ? 0.2 : 0.4;
+  vinylAngle+=Math.abs(scrollVel)*vMul;
   rec.style.transform=`rotate(${vinylAngle}deg)`;
 }
 
