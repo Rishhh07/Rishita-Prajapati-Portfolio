@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useEffect(() => {
-    window.location.replace("/rishita-portfolio-v3.html");
+    window.location.replace("/");
   }, []);
   return (
     <div style={{ minHeight: "100vh", background: "#0D0D0D", color: "#F5F0E8", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "system-ui" }}>
