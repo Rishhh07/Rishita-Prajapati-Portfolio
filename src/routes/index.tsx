@@ -6,6 +6,8 @@ component: Index,
 
 function Index() {
 return (
+  <div>
 WEBSITE WORKS 🚀
+    </div>
 );
 }
