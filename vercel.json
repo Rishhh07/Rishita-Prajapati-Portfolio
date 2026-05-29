@@ -1,0 +1,9 @@
+json id="wlw0f0"
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
