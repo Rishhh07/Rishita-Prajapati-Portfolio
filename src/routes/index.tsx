@@ -1,4 +1,4 @@
-tsx id="7p0d8f"
+tsx
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -22,4 +22,3 @@ function Home() {
     </div>
   );
 }
-
