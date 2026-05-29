@@ -1,9 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
-component: Home,
+component: Index,
 });
 
-function Home() {
-return Hello;
+function Index() {
+return (
+<main
+style={{
+minHeight: "100vh",
+background: "#111",
+color: "white",
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+fontSize: "3rem",
+}}
+>
+WEBSITE WORKS 🚀
+
+);
 }
