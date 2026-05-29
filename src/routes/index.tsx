@@ -1,23 +1,25 @@
+```tsx id="7p0d8f"
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Rishita Prajapati" },
-      { name: "description", content: "Rishita Prajapati — Portfolio" },
-    ],
-  }),
-  component: Index,
+  component: Home,
 });
 
-function Index() {
-  useEffect(() => {
-    window.location.replace("/");
-  }, []);
+function Home() {
   return (
-    <div style={{ minHeight: "100vh", background: "#0D0D0D", color: "#F5F0E8", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "system-ui" }}>
-      Loading portfolio…
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#111",
+        color: "white",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "2rem",
+      }}
+    >
+      Rishita Portfolio Works 🚀
     </div>
   );
 }
+```
